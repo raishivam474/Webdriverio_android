@@ -166,6 +166,33 @@ export default class SearchForProduct {
     // Logout from the account
     // Logout function
     static async FlipkartLogout() {
+        const Account = await new SearchForProduct().HomeAccount;
+            await Account.click();
+            console.log("Account button clicked successfully.");
+    
+            const accountDisplayed = await Account.isDisplayed();
+            if (!accountDisplayed) {
+                throw new Error('Account button is not displayed on the screen');
+            }
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1,7)')
+        const Logout = await new SearchForProduct().AccountLogout;
+            await this.waitForElement(Logout); // Wait for "Log Out" to be displayed
+    
+            // Ensure the Log Out button is visible
+            const logoutVisible = await Logout.isDisplayed();
+            if (!logoutVisible) {
+                throw new Error('Log Out button is not visible');
+            }
+    
+            // Click the "Log Out" button
+            await Logout.click();
+            console.log("Logged out successfully.");
+
+        
+        
+        
+    }
+    static async FlipkartLogout1() {
     try {
         const Account = await new SearchForProduct().HomeAccount;
         await Account.click()
@@ -200,5 +227,30 @@ export default class SearchForProduct {
     } catch (error) {
         console.error("Error while logging out: ", error);
     }
+
+    
+    
 }
+   /* static async clickOnCatagories(){
+        let catagories=$('//android.view.ViewGroup[@content-desc="Categories"]/android.view.ViewGroup')
+        await catagories.isDisplayed()
+        await catagories.click()
+        let arr=[]
+        let list1= $$('//android.view.ViewGroup[@content-desc="For You"]/../../../../../android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup')
+        for(let p=0;<list1.element;p++){
+            arr.push(list1[p].getText())
+            console.log(list1[p].getText())
+        }
+        for(let b =0;b<arr.length;b++){
+            for(j=1;j<arr.length;j++){
+                if(arr[b]==arr[j]){
+                    console.log("duplicate element is present")
+                    break;
+                }
+                else{
+                    console.log("All elements are unique")
+                }
+            }
+        }
+    }*/
 }
