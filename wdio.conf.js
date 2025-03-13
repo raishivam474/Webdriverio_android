@@ -25,7 +25,7 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/flipkart.mjs'
+        './test/specs/**/findandopen.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -34,6 +34,7 @@ export const config = {
     //
     // ============
     // Capabilities
+
     // ============
     // Define your capabilities here. WebdriverIO can run multiple capabilities at the same
     // time. Depending on the number of capabilities, WebdriverIO launches several test
@@ -58,14 +59,14 @@ export const config = {
             'appium:platformName': 'Android',
             'appium:platformVersion': '15.0',
             //'appium:deviceName': 'Android GoogleAPI Emulator',
-            'appium:deviceName':'emulator-5556',
+            'appium:deviceName':'emulator-5554',
             //'appium:deviceName': '2a9cfb18',
             'appium:automationName': 'UiAutomator2',
             //'appium:app': 'C:/Users/shiva/Documents/Webdriverio_android/app/android/Amazon1.apk',
-            'appium:appPackage': 'com.flipkart.android',
-            'appium:appActivity': 'com.flipkart.android.activity.HomeFragmentHolderActivity',
-            //'appium:appPackage': 'in.amazon.mShop.android.shopping',
-            //'appium:appActivity': 'in.amazon.mShop.navigation.MainActivity',
+            //'appium:appPackage': 'com.flipkart.android',
+            //'appium:appActivity': 'com.flipkart.android.activity.HomeFragmentHolderActivity',
+            //'appium:appPackage': 'com.bigbasket.mobileapp',
+            //'appium:appActivity': 'com.grofers.customerapp.HOLI',
             'appium:noReset': true,
             'appium:autoLaunch': true,
             'appium:autoGrantPermissions':true,

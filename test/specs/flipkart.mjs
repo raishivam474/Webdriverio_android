@@ -4,7 +4,12 @@ describe("Verifying the product journey in flipkart",()=>{
     it("Verify that Flipkart is open",async()=>{
         await driver.pause(3000)
     })
-   /* it(" Search the Product",async()=>{
+    
+    
+    
+    
+    
+   it(" Search the Product",async()=>{
         await searchforProduct.clickOnHomeSearch()
     })
     it("Click on Main search and search for Product",async()=>{
@@ -18,7 +23,7 @@ describe("Verifying the product journey in flipkart",()=>{
         await searchforProduct.Verifyproduct_INcart(ProductName)
         await searchforProduct.verify(ProductName)
         
-    })*/
+    })
     it("Logout",async()=>{
         await searchforProduct.FlipkartLogout()
     })
